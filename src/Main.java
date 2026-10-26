@@ -1,5 +1,18 @@
+import gui.MainFrame;
+
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+/**
+ * MEMBER 3 - Entry point. Starts the GUI on the Swing event thread.
+ */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Project setup OK!");
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {
+            // fall back to the default look and feel
+        }
+        SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true));
     }
 }
