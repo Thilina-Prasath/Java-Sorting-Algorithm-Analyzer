@@ -129,6 +129,8 @@ public class MainFrame extends JFrame {
         try {
             data = loader.getNumericColumn(column);  // Member 1's code
         } catch (IllegalArgumentException ex) {
+            resultsPanel.clear();                    // remove the old results
+            statusLabel.setText("Sorting not started: invalid column.");
             showError(ex.getMessage());              // e.g. non-numeric / empty column
             return;
         }
